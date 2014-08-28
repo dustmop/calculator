@@ -1,4 +1,4 @@
-default: calculator
+default: calculator.nes
 
 clean:
 	rm -rf .b/
@@ -15,5 +15,5 @@ clean:
 	mkdir -p .b/
 	ca65 chr.asm -o .b/chr.o
 
-calculator: .b/main.o .b/convert_decimal.o .b/chr.o
+calculator.nes: .b/main.o .b/convert_decimal.o .b/chr.o
 	ld65 .b/main.o .b/convert_decimal.o .b/chr.o -o calculator.nes -C nes_nrom.cfg
